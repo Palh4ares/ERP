@@ -67,10 +67,7 @@
                 @enderror
             </div>
             
-            <div class="mb-3">
-                <label for="observacoes" class="form-label">Observações</label>
-                <textarea class="form-control" id="observacoes" name="observacoes" rows="3">{{ old('observacoes') }}</textarea>
-            </div>
+            
             
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">

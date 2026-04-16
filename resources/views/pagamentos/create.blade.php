@@ -33,15 +33,24 @@
             @csrf
             
             <div class="mb-3">
-                <label class="form-label">Valor do Pagamento *</label>
-                <input type="number" step="0.01" class="form-control @error('valor') is-invalid @enderror" 
-                       name="valor" value="{{ old('valor', $venda->saldo) }}" 
-                       max="{{ $venda->saldo }}" min="0.01" required>
-                @error('valor')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-                <small class="text-muted">Valor máximo: R$ {{ number_format($venda->saldo, 2, ',', '.') }}</small>
-            </div>
+    <label class="form-label">Valor do Pagamento *</label>
+
+    <input 
+        type="number" 
+        step="0.01"
+        class="form-control @error('valor') is-invalid @enderror" 
+        name="valor"
+        value="{{ old('valor') }}"
+        max="{{ $venda->saldo }}"
+        min="0.01"
+        placeholder="Digite o valor pago"
+        required
+    >
+
+    @error('valor')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror    
+</div>
             
             <div class="mb-3">
                 <label class="form-label">Data do Pagamento *</label>
@@ -51,15 +60,6 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-            
-            <div class="mb-3">
-                <label class="form-label">Observação</label>
-                <textarea class="form-control" name="observacao" rows="3">{{ old('observacao') }}</textarea>
-                @error('observacao')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-            
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-check-circle"></i> Registrar Pagamento
