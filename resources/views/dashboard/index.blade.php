@@ -9,10 +9,10 @@
         <small class="text-muted">Visão geral do sistema</small>
     </div>
 
-    <div class="text-end">
+    <!-- <div class="text-end">
         <small class="text-muted">Bem-vindo,</small><br>
         <strong>{{ Auth::user()->name }}</strong>
-    </div>
+    </div> -->
 </div>
 @endsection
 
